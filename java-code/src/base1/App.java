@@ -11,6 +11,11 @@ public class App {
 
 
     public static void main(String[] args) {
+        main4(args);
+    }
+
+
+    public static void main5(String[] args) {
         LRUCache<Integer, String> cache = new LRUCache<>(3);
         cache.put(1, "a");
         cache.put(2, "b");
@@ -33,22 +38,17 @@ public class App {
         for (int i = 0; i < 10000; i++) {
             list.add(i);
         }
-
-
-        List<Integer> integers = Collections.synchronizedList(list);
-
+//        List<Integer> integers = Collections.synchronizedList(list);
         Thread t1 = new Thread(()-> {
-            for (Integer next : integers) {
+            for (Integer next : list) {
                 if (next < 9999) {
-                    integers.set(next, next + 1);
+                    list.set(next, next + 1);
                 }
             }
         });
-
         Thread t2 = new Thread(()-> {
-            integers.remove(2);
+            list.remove(2);
         });
-
         t1.start();
         t2.start();
     }
