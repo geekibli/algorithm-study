@@ -33,6 +33,7 @@ public class Leetcode209 {
 
     /**
      * 暴力解法2  基于暴力解法1上优化
+     * 超出时间限制
      */
     class Solution2 {
         public int minSubArrayLen(int target, int[] nums) {
@@ -58,6 +59,7 @@ public class Leetcode209 {
 
     /**
      * 暴力解法1
+     * 超出时间限制
      */
     class Solution {
 
