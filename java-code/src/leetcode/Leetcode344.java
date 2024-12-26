@@ -21,4 +21,23 @@ public class Leetcode344 {
         }
     }
 
+    public static void reverseString(char[] s) {
+
+        int index = 0;
+
+        for(int i = s.length - 1; i >= 0 && index <= i; i--){
+            char temp = s[index];
+            s[index] = s[i];
+            s[i] = temp;
+            index++;
+        }
+    }
+
+    public static void main(String[] args) {
+        char[] s = {'h','e','l','l','o'};
+        reverseString(s);
+
+        System.err.println(s);
+    }
+
 }
